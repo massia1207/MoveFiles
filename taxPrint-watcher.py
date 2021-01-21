@@ -20,7 +20,9 @@ class Handler(FileSystemEventHandler):
           if os.path.isfile(destPath +"/" + f):
             print("dupicate file: " + f)
             shutil.move(srcDir+f,destPath+"/"+f+"-DUPLICATE.txt")
+            print("moved: " + f)
           else: shutil.move(srcDir+f,destPath)
+          print("moved: " + f)
       except:
         print("error moving file")
   
