@@ -7,7 +7,7 @@ import os
 import shutil
 import glob
 
-srcDir = "C:/GDT-test/CLIENTS/zClient Print Files/"
+srcDir = "C:/test/CLIENTS/zClient Print Files/"
 
 class Handler(FileSystemEventHandler):
   def on_modified(self, event):
@@ -47,7 +47,7 @@ def fileParser(file):
     alpha = "YZ"
   else: print('error parsing filename')
     
-  for dir in glob.glob("c:/GDT-Test/CLIENTS/" + alpha + "/" + clientID + "*"):
+  for dir in glob.glob("c:/Test/CLIENTS/" + alpha + "/" + clientID + "*"):
     clientPath = dir
 
   return clientPath + "/Tax/" + year
