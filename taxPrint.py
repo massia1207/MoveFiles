@@ -6,7 +6,7 @@ from win10toast import ToastNotifier
 notifier = ToastNotifier()
 
 def main():
-  srcDir = "C:/GDT-test/CLIENTS/zClient Print Files/"
+  srcDir = "C:/test/CLIENTS/zClient Print Files/"
   moveFile(srcDir)
 
 def fileParser(file):
@@ -30,7 +30,7 @@ def fileParser(file):
     alpha = "YZ"
   else: print('error parsing filename')
     
-  for dir in glob.glob("c:/GDT-Test/CLIENTS/" + alpha + "/" + clientID + "*"):
+  for dir in glob.glob("c:/Test/CLIENTS/" + alpha + "/" + clientID + "*"):
     clientPath = dir
 
   return clientPath + "/Tax/" + year
@@ -44,7 +44,7 @@ def moveFile(srcDir):
       if os.path.exists(destPath):
         if os.path.isfile(destPath +"/" + f):
           print("dupicate file: " + f)
-          notifier.show_toast("GDT File Mover","duplicate file error: " + f)
+          notifier.show_toast("File Mover","duplicate file error: " + f)
           print(destPath+f+"-DUPLICATE.txt")
           shutil.move(srcDir+f,destPath+"/"+f+"-DUPLICATE.txt")
         else: shutil.move(srcDir+f,destPath)
